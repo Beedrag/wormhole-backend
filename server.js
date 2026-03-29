@@ -8,14 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 // ================= DATABASE =================
-// ⚠️ sementara masih localhost (nanti kita ganti ke Railway DB)
-const db = mysql.createConnection({
-  host: "mysql.railway.internal",
-  user: "root",
-  password: "OYsPKqeMKOhXwzKdYSoMLegGsYgKczbr",
-  database: "railway",
-  port: 3306
-});
+const db = mysql.createConnection(process.env.MYSQL_URL);
 
 db.connect((err) => {
   if (err) {
