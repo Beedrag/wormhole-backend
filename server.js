@@ -6,6 +6,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/api/test", (req, res) => {
+  res.json({ message: "API jalan!" });
+});
+
 // koneksi ke MySQL
 const db = mysql.createConnection({
   host: "localhost",
