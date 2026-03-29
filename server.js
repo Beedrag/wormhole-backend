@@ -8,6 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 // ================= DATABASE =================
+console.log("MYSQL_URL:", process.env.MYSQL_URL);
 const db = mysql.createConnection(process.env.MYSQL_URL);
 
 db.connect((err) => {
