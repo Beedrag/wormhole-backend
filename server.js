@@ -10,11 +10,11 @@ app.use(express.json());
 // ================= DATABASE =================
 // ⚠️ sementara masih localhost (nanti kita ganti ke Railway DB)
 const db = mysql.createConnection({
-  host: process.env.MYSQLHOST,
-  user: process.env.MYSQLUSER,
-  password: process.env.MYSQLPASSWORD,
-  database: process.env.MYSQLDATABASE,
-  port: process.env.MYSQLPORT
+  host: "mysql.railway.internal",
+  user: "root",
+  password: "OYsPKqeMKOhXwzKdYSoMLegGsYgKczbr",
+  database: "railway",
+  port: 3306
 });
 
 db.connect((err) => {
